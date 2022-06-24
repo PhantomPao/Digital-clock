@@ -26,6 +26,14 @@
 			<span style="--i:11;"><b>11</b></span>
 			<span style="--i:12;"><b>12</b></span>
 		</div>
+
+
+		<div id="time">
+			<div id="hour">00</div>
+			<div id="minutes">00</div>
+			<div id="seconds">00</div>
+			<div id="ampm">00</div>
+		</div>
 	</div>
 
 	<script>
@@ -33,13 +41,16 @@
 		let mn = document.querySelector('#mn');
 		let sc = document.querySelector('#sc');
 
+		setInterval(() =>{
 		let day = new Date();
-		let hh = day.getHours() = 30;
-		let mm = day.getMinutes() = 6;
-		let ss = day.getSeconds() = 6;
+		let hh = day.getHours() * 30;
+		let mm = day.getMinutes() * 6;
+		let ss = day.getSeconds() * 6;
 
 		hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
 		mn.style.transform = `rotateZ(${mm}deg`;
+		sc.style.transform = `rotateZ(${ss}deg)`;
+		})
 	</script>
 </body>
 </html>
